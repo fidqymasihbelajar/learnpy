@@ -2,6 +2,8 @@
 #this is a second line i added to find out how git works
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
 def get_drive():
 
@@ -19,7 +21,8 @@ def get_drive():
 
 def main():
     driver = get_drive()
-    element = driver.find_element_by_xpath("/html/body/div[1]/div/h1[1]")
+    element = driver.find_element(By.XPATH, "/html/body/div[1]/div/h1[1]")
+
     return element
 
 print(main())
